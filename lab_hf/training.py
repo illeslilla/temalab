@@ -28,3 +28,5 @@ if __name__ == "__main__":
     model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=['accuracy'])
     model.fit(train_img, train_lab, batch_size=26, epochs=3, validation_split=0.1)
 
+    model.save("character_recognition.model")
+
