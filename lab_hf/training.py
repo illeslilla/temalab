@@ -20,13 +20,13 @@ if __name__ == "__main__":
 
     model.add(tf.keras.layers.Flatten())
     model.add(tf.keras.layers.Dense(64))
-    #model.add(tf.keras.layers.Activation("relu"))
+    model.add(tf.keras.layers.Activation("relu"))
 
     model.add(tf.keras.layers.Dense(26))
     model.add(tf.keras.layers.Activation("sigmoid"))
 
     model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=['accuracy'])
-    model.fit(train_img, train_lab, batch_size=26, epochs=3, validation_split=0.1)
+    model.fit(train_img, train_lab, batch_size=26, epochs=5, validation_split=0.1)
 
     model.save("character_recognition.model")
 
