@@ -2,7 +2,6 @@ import tensorflow as tf
 import pickle
 
 
-
 if __name__ == "__main__":
     train_img = pickle.load(open("train_images", "rb"))
     train_lab = pickle.load(open("train_labels", "rb"))
@@ -26,7 +25,7 @@ if __name__ == "__main__":
     model.add(tf.keras.layers.Activation("sigmoid"))
 
     model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=['accuracy'])
-    model.fit(train_img, train_lab, batch_size=26, epochs=5, validation_split=0.1)
+    model.fit(train_img, train_lab, batch_size=26, epochs=4, validation_split=0.1)
 
     model.save("character_recognition.model")
 

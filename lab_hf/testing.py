@@ -1,6 +1,15 @@
 import tensorflow as tf
 import numpy as np
 import pickle
+import string
+
+CLASSES = string.ascii_uppercase
+
+
+def get_class(index):
+    """Mappaszámot visszalakíom karakterré hogy megtudjam a kép milyen karaktert ábrázol"""
+    return CLASSES[index]
+
 
 if __name__ == "__main__":
     new_model = tf.keras.models.load_model("character_recognition.model")
