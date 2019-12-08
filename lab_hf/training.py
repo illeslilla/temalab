@@ -22,7 +22,7 @@ if __name__ == "__main__":
     model.add(tf.keras.layers.Activation("relu"))
 
     model.add(tf.keras.layers.Dense(26))
-    model.add(tf.keras.layers.Activation("sigmoid"))
+    model.add(tf.keras.layers.Activation("softmax"))
 
     model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=['accuracy'])
     model.fit(train_img, train_lab, batch_size=26, epochs=4, validation_split=0.1)
